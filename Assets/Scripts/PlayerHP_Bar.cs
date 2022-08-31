@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHP_Bar : MonoBehaviour
 {
     public Transform player;
-    public Slider hpbar;
+    public Image hpbar;
     public float maxHp;
     public float currenthp;
 
@@ -14,6 +14,6 @@ public class PlayerHP_Bar : MonoBehaviour
     void Update()
     {
         transform.position = player.position + new Vector3(0, 0, 0);
-        hpbar.value = currenthp / maxHp;
+        hpbar.fillAmount = currenthp / maxHp;
     }
 }
