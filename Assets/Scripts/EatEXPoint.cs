@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EatEXPoint : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private int level = 0;
+    private int levelPoint = 0;
     void Start()
     {
-        
+        level = 0;
+        levelPoint = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
