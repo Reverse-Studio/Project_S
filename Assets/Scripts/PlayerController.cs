@@ -5,19 +5,28 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
-    private Rigidbody charRigidbody;
-    void Start()
+    private Joystick controller;
+    public Transform player;
+    public Transform camPivot;
+
+    private void Awake()
     {
-        charRigidbody = GetComponent<Rigidbody>();
+        controller = this.GetComponent<Joystick>();
     }
 
     void Update()
     {
-        float hAxis = Input.GetAxisRaw("Horizontal");
-        float vAxis = Input.GetAxisRaw("Vertical");
+        Vector3 inputDir = Vector3.forward * controller.Vertical;
+        inputDir += Vector3.right * controller.Horizontal;
 
-        Vector3 inputDir = new Vector3(hAxis, 0, vAxis).normalized;
-        charRigidbody.velocity = inputDir*moveSpeed;
-        transform.LookAt(transform.position + inputDir);
+        if(inputDir == Vector3.zero) return;
+
+        Vector3 conDirAngle = Quaternion.LookRotation(inputDir).eulerAngles;
+        Vector3 camPivotAngle = camPivot.eulerAngles;
+
+        Vector3 moveAngle = Vector3.up * (conDirAngle.y + camPivotAngle.y);
+
+        player.rotation = Quaternion.LookRotation(inputDir);
+        player.Translate(Vector3.forward * Time.fixedDeltaTime * moveSpeed);
     }
 }

@@ -5,13 +5,13 @@ using UnityEngine;
 public class CamController : MonoBehaviour
 {
     public Transform targetTransform;
-    public Vector3 CameraOffset;
     void Start()
     {
         
     }
     void Update()
     {
-        transform.position = targetTransform.position + CameraOffset;
+        Vector3 pos = this.transform.position;
+        this.transform.position = Vector3.Lerp(pos, targetTransform.position, 0.4f);
     }
 }
