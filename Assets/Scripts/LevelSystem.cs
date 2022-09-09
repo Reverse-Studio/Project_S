@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSystem
+public class LevelSystem : MonoBehaviour
 {
     private int level;
     private int experience;
     private int experienceToNextLevel;
-    private int expOrb = 30;
+    private int expAmount = 30;
+    public GameObject expOrb;
 
     public LevelSystem() {
         level = 1;
@@ -18,7 +19,7 @@ public class LevelSystem
     private void OnTriggerEnter(Collider other)
     {
         other.gameObject.SetActive(false);
-        AddExperience(expOrb);
+        AddExperience(expAmount);
     }
 
     public void AddExperience(int amount) {
