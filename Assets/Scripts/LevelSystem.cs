@@ -6,14 +6,14 @@ public class LevelSystem : MonoBehaviour
 {
     private int level;
     private int experience;
-    private int experienceToNextLevel;
+    private int[] experienceToNextLevel = new int[] 
+    { 30, 120, 300, 500, 800, 1200, 1800, 2500, 3200, 3800, 4500, 5200, 6000, 7000, 8200 };
     private int expAmount = 30;
     public GameObject expOrb;
 
     public LevelSystem() {
-        level = 1;
+        level = 0;
         experience = 0;
-        experienceToNextLevel = 100;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,9 +24,9 @@ public class LevelSystem : MonoBehaviour
 
     public void AddExperience(int amount) {
         experience += amount;
-        if(experience >= experienceToNextLevel) {
+        if(experience >= experienceToNextLevel[level]) {
+            experience -= experienceToNextLevel[level];
             level++;
-            experience -= experienceToNextLevel;
         }
     }
 
@@ -35,6 +35,6 @@ public class LevelSystem : MonoBehaviour
     }
 
     public float GetExperienceNormalized() {
-        return (float)experience / experienceToNextLevel;
+        return (float)experience / experienceToNextLevel[level];
     }
 }
