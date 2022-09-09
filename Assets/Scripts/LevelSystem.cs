@@ -7,11 +7,18 @@ public class LevelSystem
     private int level;
     private int experience;
     private int experienceToNextLevel;
+    private int expOrb = 30;
 
     public LevelSystem() {
         level = 1;
         experience = 0;
         experienceToNextLevel = 100;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.SetActive(false);
+        AddExperience(expOrb);
     }
 
     public void AddExperience(int amount) {
