@@ -1,2 +1,6 @@
 using UnityEngine;
-public class ExpOrb : MonoBehaviour { public int Amount; }
+public class ExpOrb : MonoBehaviour { 
+    public int Amount; 
+    
+    
+}
