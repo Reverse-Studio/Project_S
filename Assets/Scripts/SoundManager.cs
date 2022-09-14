@@ -13,7 +13,13 @@ public class SoundManager : MonoBehaviour
     private Dictionary<string, AudioClip> audioClipDict;
 
     [SerializeField]
-    private AudioSource[] sources = new AudioSource[(int)AudioType.count];
+    private List<AudioSource> fxSources = new List<AudioSource>();
+
+    [SerializeField]
+    private AudioSource bgmSource;
+
+    [SerializeField]
+    private int MaxNumberOfSound;
 
     private void Awake()
     {
@@ -23,17 +29,22 @@ public class SoundManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        for (int i = 0; i < sources.Length; i++)
+
+        for (int i = 0; i <= MaxNumberOfSound; i++)
         {
-            string _name_ = "Unknown";
+            GameObject inst = new GameObject { name = $"EFFECT{i}" };
+            inst.transform.SetParent(transform);
 
-            if (i == 0) _name_ = "BGM";
-            else if (i == 1) _name_ = "EFFECT";
-
-            GameObject _inst_ = new GameObject { name = _name_ };
-
-            _inst_.transform.SetParent(transform);
-            sources[i] = _inst_.AddComponent<AudioSource>();
+            if (i == 0)
+            {
+                inst.name = "BGM";
+                bgmSource = inst.AddComponent<AudioSource>();
+                bgmSource.loop = true;
+            }
+            else
+            {
+                fxSources.Add(inst.AddComponent<AudioSource>());
+            }
         }
 
         __instance__ = this;
@@ -52,7 +63,28 @@ public class SoundManager : MonoBehaviour
         Debug.Log("Done!");
     }
 
-    public enum AudioType { BGM, EFFECT, count }
+    public enum AudioType { BGM, EFFECT }
+
+    private AudioSource getIdleSource(AudioType type)
+    {
+        if (type == AudioType.BGM) return bgmSource;
+
+        AudioSource result = null;
+
+        foreach (AudioSource source in fxSources)
+        {
+            if (!source.isPlaying)
+            {
+                result = source;
+                break;
+            }
+
+            if (result == null) result = source;
+            else if (source.time < result.time) result = source;
+        }
+
+        return result;
+    }
 
     public void Play(string name, AudioType type)
     {
@@ -62,15 +94,10 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
-        AudioSource source = sources[(int)type];
+        AudioSource source = getIdleSource(type);
         AudioClip clip = audioClipDict[name];
 
-        if (source.isPlaying) source.Stop();
-
-        if (type == AudioType.BGM)
-        {
-            source.loop = true;
-        }
+        //if (source.isPlaying) source.Stop();
 
         source.clip = clip;
         source.Play();
