@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -8,22 +7,25 @@ public class SoundManager : MonoBehaviour
     private static SoundManager __instance__ = null;
     public static SoundManager INSTANCE { get => __instance__; }
 
-    private Dictionary<string, AudioClip> items;
+    [SerializeField]
+    private AudioClip[] Clips;
+
+    private Dictionary<string, AudioClip> audioClipDict;
+
+    [SerializeField]
     private AudioSource[] sources = new AudioSource[(int)AudioType.count];
 
-    private void Start()
+    private void Awake()
     {
-        items = new Dictionary<string, AudioClip>();
+        audioClipDict = new Dictionary<string, AudioClip>();
 
-        Debug.Log("Finding Sound Clips");
-        InitLoad("Assets\\Resources\\Sound");
-        Debug.Log("Done!");
+        InitLoad();
 
         DontDestroyOnLoad(gameObject);
 
         for (int i = 0; i < sources.Length; i++)
         {
-            string _name_ = "empty";
+            string _name_ = "Unknown";
 
             if (i == 0) _name_ = "BGM";
             else if (i == 1) _name_ = "EFFECT";
@@ -31,43 +33,44 @@ public class SoundManager : MonoBehaviour
             GameObject _inst_ = new GameObject { name = _name_ };
 
             _inst_.transform.SetParent(transform);
-
             sources[i] = _inst_.AddComponent<AudioSource>();
         }
 
         __instance__ = this;
     }
 
-    private void InitLoad(string cd /*current directory*/)
+    private void InitLoad()
     {
-        foreach (string file in Directory.GetFiles(cd))
+        Debug.Log("Loading Sound Clips");
+
+        foreach (AudioClip clip in Clips)
         {
-            if (!file.EndsWith(".mp3")) continue;
-
-            string fileLocation = file.Split('.')[0].Substring(17);
-            string key = fileLocation.Substring(6);
-
-            items[key] = Resources.Load<AudioClip>(fileLocation);
-
-            if (items[key] != null) Debug.Log($"{key} is Loaded");
-            else Debug.Log($"tryed to load {key}({fileLocation}) but has error");
+            Debug.Log($"Loaded {clip.name}");
+            audioClipDict[clip.name] = clip;
         }
 
-        foreach (string next in Directory.GetDirectories(cd))
-        {
-            InitLoad(next);
-        }
+        Debug.Log("Done!");
     }
 
     public enum AudioType { BGM, EFFECT, count }
 
     public void Play(string name, AudioType type)
     {
-        AudioSource source = sources[(int)type];
-        AudioClip clip = items[name];
+        if (audioClipDict.ContainsKey(name) == false)
+        {
+            Debug.Log($"{name} is NotFound");
+            return;
+        }
 
-        if (clip == null) { Debug.Log($"{name} is NotFound"); return; }
+        AudioSource source = sources[(int)type];
+        AudioClip clip = audioClipDict[name];
+
         if (source.isPlaying) source.Stop();
+
+        if (type == AudioType.BGM)
+        {
+            source.loop = true;
+        }
 
         source.clip = clip;
         source.Play();
