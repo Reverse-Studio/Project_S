@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class SkillController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public float spinSpeed = 10;
+    public Transform Target;
     void Update()
     {
-        
+        gameObject.transform.position = Target.position;
+        transform.RotateAround(Target.position, Vector3.up,Time.deltaTime * spinSpeed);
     }
 }
