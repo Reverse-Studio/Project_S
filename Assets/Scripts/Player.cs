@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 
     int maxHealth = 100;
     int currentHealth;
+    private float countTime;
+    public float delayTime = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +24,24 @@ public class Player : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            currentHealth -= 10;
-            health.SetHealth(currentHealth);
+            countTime += Time.deltaTime;
+            if (countTime >= delayTime) {
+                countTime -= delayTime;
+                currentHealth -= 10;
+                health.SetHealth(currentHealth);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            countTime = 0;
         }
     }
 }
