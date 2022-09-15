@@ -7,14 +7,13 @@ public class MapSpawner : MonoBehaviour
     public GameObject[] mapPrefab; 
     public int count = 9; 
 
-    public float yMin = -3.5f; 
-    public float yMax = 1.5f; 
-    private float xPos = 20f; // 배치할 위치의 x 값
+
+    private float xPos = 0f; // 배치할 위치의 x 값
 
     private GameObject[] platforms; 
     private int currentIndex = 0; 
 
-    private Vector2 poolPosition = new Vector2(0, -20); // 초반에 생성된 발판들을 화면 밖에 숨겨둘 위치
+    private Vector3 poolPosition = new Vector3(0, 0, 0); // 초반에 생성된 발판들을 화면 밖에 숨겨둘 위치
 
 
     void Start() {
