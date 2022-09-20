@@ -97,7 +97,7 @@ public class SoundManager : MonoBehaviour
         AudioSource source = getIdleSource(type);
         AudioClip clip = audioClipDict[name];
 
-        //if (source.isPlaying) source.Stop();
+        if (source.isPlaying) source.Stop();
 
         source.clip = clip;
         source.Play();
