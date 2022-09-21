@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapSpawner : MonoBehaviour
+public class MoveMap : MonoBehaviour
 {
     public GameObject[] mapPrefab; 
     public GameObject player;
