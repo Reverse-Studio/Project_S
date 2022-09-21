@@ -6,6 +6,7 @@ public class MapSpawner : MonoBehaviour
 {
     public GameObject[] mapPrefab; 
     public GameObject player;
+    
     private float posX;
     private float posZ;
 
@@ -15,7 +16,7 @@ public class MapSpawner : MonoBehaviour
     }
 
     void Update() {
-        if(posX - player.gameObject.transform.position.x <= -20) { // arr[3] 방향
+        if(posX - player.gameObject.transform.position.x <= -15) { // arr[3] 방향
             Swap(mapPrefab, 0, 1, 2);
             Swap(mapPrefab, 3, 4, 5);
             Swap(mapPrefab, 6, 7, 8);
@@ -24,7 +25,7 @@ public class MapSpawner : MonoBehaviour
             mapPrefab[8].gameObject.transform.position += new Vector3(60, 0, 0);
             posX = player.gameObject.transform.position.x;
         }
-        else if(posX - player.gameObject.transform.position.x >= 20) { // arr[5] 방향
+        if(posX - player.gameObject.transform.position.x >= 15) { // arr[5] 방향
             Swap(mapPrefab, 2, 1, 0);
             Swap(mapPrefab, 5, 4, 3);
             Swap(mapPrefab, 8, 7, 6);
@@ -33,7 +34,7 @@ public class MapSpawner : MonoBehaviour
             mapPrefab[6].gameObject.transform.position += new Vector3(-60, 0, 0);
             posX = player.gameObject.transform.position.x;
         }
-        else if(posZ - player.gameObject.transform.position.z <= -20) { // arr[7] 방향
+        if(posZ - player.gameObject.transform.position.z <= -15) { // arr[7] 방향
             Swap(mapPrefab, 6, 3, 0);
             Swap(mapPrefab, 7, 4, 1);
             Swap(mapPrefab, 8, 5, 2);
@@ -42,7 +43,7 @@ public class MapSpawner : MonoBehaviour
             mapPrefab[2].gameObject.transform.position += new Vector3(0, 0, 60);
             posZ = player.gameObject.transform.position.z;
         }
-        else if(posZ - player.gameObject.transform.position.z >= 20) { // arr[1] 방향
+        if(posZ - player.gameObject.transform.position.z >= 15) { // arr[1] 방향
             Swap(mapPrefab, 0, 3, 6);
             Swap(mapPrefab, 1, 4, 7);
             Swap(mapPrefab, 2, 5, 8);
