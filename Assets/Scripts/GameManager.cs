@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 10; i++)
         {
-            for (int j = 0; j < 100; j++)
+            for (int j = 0; j < 10; j++)
             {
-                Vector3 location = new Vector3(i, 0, j);
+                Vector3 location = new Vector3(i * 10, 0, j * 10);
                 SpawnExpOrb(location, Random.Range(1, 15));
             }
         }
