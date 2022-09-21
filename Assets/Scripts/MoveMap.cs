@@ -6,16 +6,18 @@ public class MoveMap : MonoBehaviour
 {
     public GameObject[] mapPrefab; 
     public GameObject player;
+    public GameObject[] rangeObject;
     
     private float posX;
     private float posZ;
+    
 
-    void Start() {
-        posX = player.gameObject.transform.position.x;
-        posZ = player.gameObject.transform.position.z;
+    private void Start() {
+        posX = player.gameObject.transform.position.x; // 0
+        posZ = player.gameObject.transform.position.z; // 0
     }
 
-    void Update() {
+    private void Update() {
         if(posX - player.gameObject.transform.position.x <= -20) { // arr[3] 방향
             Swap(mapPrefab, 0, 1, 2);
             Swap(mapPrefab, 3, 4, 5);
@@ -51,6 +53,12 @@ public class MoveMap : MonoBehaviour
             mapPrefab[7].gameObject.transform.position += new Vector3(0, 0, -60);
             mapPrefab[8].gameObject.transform.position += new Vector3(0, 0, -60);
             posZ = player.gameObject.transform.position.z;
+        }
+    }
+
+    private void OnTriggerEnter(Collider col) {
+        if(col.gameObject.tag.Equals("Chunk")) {
+            Debug.Log("디버깅");
         }
     }
 
