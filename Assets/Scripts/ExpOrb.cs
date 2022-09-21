@@ -1,9 +1,4 @@
 using UnityEngine;
-<<<<<<< HEAD
-public class ExpOrb : MonoBehaviour { 
-    public int Amount; 
-    
-=======
 public class ExpOrb : MonoBehaviour
 {
     private GameObject Player;
@@ -54,5 +49,4 @@ public class ExpOrb : MonoBehaviour
         SoundManager.INSTANCE.Play("ExpUp", SoundManager.AudioType.EFFECT);
         Destroy(gameObject);
     }
->>>>>>> 163dc7882f6d9c0694f8721d3e0f0f10db238445
 }
