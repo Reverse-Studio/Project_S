@@ -24,6 +24,12 @@ public class Player : MonoBehaviour
         
     }
 
+    void OnTriggerEnter(Collider col) {
+        if(col.tag == ("Chunk")) {
+            Debug.Log(col);
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy"))
