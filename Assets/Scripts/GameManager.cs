@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (__instance__ != null) Destroy(gameObject);
+        
         orb = Resources.Load<GameObject>("Prefab/ExpOrb");
         popup.SetActive(false);
         DontDestroyOnLoad(gameObject);
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-     
+
     }
 
     public void SpawnExpOrb(Vector3 location, int amount)
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void SetPause()
     {
-        if(isPause == false)
+        if (isPause == false)
         {
             Time.timeScale = 0f;
             isPause = true;
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void SetStart()
     {
-        if(isPause == true)
+        if (isPause == true)
         {
             Time.timeScale = 1f;
             isPause = false;

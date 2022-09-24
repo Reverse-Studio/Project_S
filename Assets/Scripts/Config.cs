@@ -1,1 +1,1 @@
-public class Config { public static float MagnetDistance = -1f; }
+public class Config { public static float MagnetDistance = 3f; }
