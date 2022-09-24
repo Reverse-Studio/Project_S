@@ -35,6 +35,6 @@ public class PlayerController : MonoBehaviour
         Vector3 moveAngle = Vector3.up * (conDirAngle.y + camPivotAngle.y);
 
         player.rotation = Quaternion.LookRotation(inputDir);
-        player.Translate(Vector3.forward * Time.fixedDeltaTime * moveSpeed);
+        player.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
     }
 }
