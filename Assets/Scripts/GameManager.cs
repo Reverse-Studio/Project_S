@@ -10,11 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager INSTANCE { get => __instance__; }
     private GameObject orb;
     bool isPause = false;
-    [SerializeField]
-    private GameObject popup;
-    private Button pause;
-    private Button background;
-    private Button resume;
+    [SerializeField] private GameObject popup;
+    [SerializeField] private GameObject button;
 
     private void Awake()
     {
@@ -54,6 +51,7 @@ public class GameManager : MonoBehaviour
     {
         if (isPause == false)
         {
+            button.SetActive(false);
             Time.timeScale = 0f;
             isPause = true;
         }
@@ -63,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         if (isPause == true)
         {
+            button.SetActive(true);
             Time.timeScale = 1f;
             isPause = false;
         }
