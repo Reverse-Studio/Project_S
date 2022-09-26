@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Chunk
+  - Chunk1
+  - Chunk2
+  - Chunk3
   layers:
   - Default
   - TransparentFX

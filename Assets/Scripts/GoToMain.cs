@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CharSpin : MonoBehaviour
+
+public class GoToMain : MonoBehaviour
 {
-    public float StandardSpeed = 100f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,11 @@ public class CharSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(StandardSpeed * Time.deltaTime, StandardSpeed * Time.deltaTime, StandardSpeed * Time.deltaTime));    
+        
+    }
+
+    public void GoToMainScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }

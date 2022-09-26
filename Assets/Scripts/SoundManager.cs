@@ -23,6 +23,8 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        if (__instance__ != null) { Destroy(gameObject); return; }
+        
         audioClipDict = new Dictionary<string, AudioClip>();
 
         InitLoad();

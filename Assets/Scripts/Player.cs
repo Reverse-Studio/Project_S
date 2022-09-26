@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public PlayerHealth health;
+    public Gradient gradient;
 
     int maxHealth = 100;
     int currentHealth;
@@ -16,12 +17,21 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
+        gradient.Evaluate(1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        currentHealth--;
+        if (currentHealth < 0) currentHealth += maxHealth;
+        health.SetHealth(currentHealth);
+    }
+
+    void OnTriggerEnter(Collider col) {
+        if(col.tag == ("Chunk")) {
+            Debug.Log(col);
+        }
     }
 
     private void OnTriggerStay(Collider other)
