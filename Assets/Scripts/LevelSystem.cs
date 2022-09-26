@@ -9,9 +9,6 @@ public partial class Player : MonoBehaviour
 
     private int[] experienceToNextLevel = new int[] { 30, 120, 300, 500, 800, 1200, 1800, 2500, 3200, 3800, 4500, 5200, 6000, 7000, 8200 };
 
-    private int expAmount = 30;
-    public GameObject expOrb;
-
     public void AddExperience(int amount)
     {
         experience += amount;

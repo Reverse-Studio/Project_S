@@ -4,6 +4,8 @@ public class ExpOrb : MonoBehaviour
     private GameObject Player;
     private ParticleSystem particle;
 
+    [SerializeField] private float MagnetDistance;
+
     private void Awake()
     {
         particle = GetComponent<ParticleSystem>();
@@ -16,7 +18,7 @@ public class ExpOrb : MonoBehaviour
 
     private void Update()
     {
-        if (Config.MagnetDistance == -1 || Vector3.Distance(transform.position, Player.transform.position) <= Config.MagnetDistance)
+        if (MagnetDistance == -1 || Vector3.Distance(transform.position, Player.transform.position) <= MagnetDistance)
         {
             transform.LookAt(Player.transform, Vector3.up);
             transform.Translate(Vector3.forward * Time.deltaTime * 10);
@@ -43,8 +45,8 @@ public class ExpOrb : MonoBehaviour
     {
         if (other.tag != "Player") return;
 
-        //Player player = other.gameObject.GetComponent<Player>();
-        //player.EXP += Amount;
+        Player player = other.gameObject.GetComponent<Player>();
+        player.AddExperience(Amount);
 
         SoundManager.INSTANCE.Play("ExpUp", SoundManager.AudioType.EFFECT);
         Destroy(gameObject);
