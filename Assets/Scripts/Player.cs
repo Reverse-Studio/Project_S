@@ -5,7 +5,6 @@ using UnityEngine;
 public partial class Player : MonoBehaviour
 {
     public PlayerHealth health;
-    private Gradient gradient;
     int maxHealth = 100;
     public int currentHealth;
     private float countTime;
@@ -15,7 +14,6 @@ public partial class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        gradient.Evaluate(1f);
         health.SetMaxHealth(maxHealth);
     }
 
