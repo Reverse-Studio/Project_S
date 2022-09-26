@@ -6,7 +6,9 @@ public class MoveMap : MonoBehaviour
 {
     public GameObject[] mapPrefab; 
     public GameObject player;
+    public GameObject rangeObjectPrefab;
     public GameObject[] rangeObject;
+    public int count = 4;
     
     private float posX;
     private float posZ;
@@ -30,6 +32,10 @@ public class MoveMap : MonoBehaviour
         if(posZ - player.gameObject.transform.position.z >= 20) { // arr[1] 방향
             DownMoveMap();
         }
+        // for(int i = 0; i < count; i++) {
+        //     rangeObject[i] = Instantiate(rangeObject[i], this.transform.position, Quaternion.identity);
+        //     rangeObject[i].transform.parent = mapPrefab[4].transform;
+        // }
     }
 
     void OnTriggerEnter(Collider col) {
@@ -89,6 +95,9 @@ public class MoveMap : MonoBehaviour
         mapPrefab[3].gameObject.transform.position += new Vector3(-60, 0, 0);
         mapPrefab[6].gameObject.transform.position += new Vector3(-60, 0, 0);
         posX = player.gameObject.transform.position.x;
+    }
+
+    void MoveRangeObject() {
     }
 
     void DeleteRangeObject() {
