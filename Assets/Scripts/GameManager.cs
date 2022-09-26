@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (__instance__ != null) Destroy(gameObject);
+        Debug.Log(__instance__);
+        if (__instance__ != null) { Destroy(gameObject); return; }
         
         orb = Resources.Load<GameObject>("Prefab/ExpOrb");
         popup.SetActive(false);
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        SetStart();
         for (int i = 0; i < 10; i++)
         {
             for (int j = 0; j < 10; j++)

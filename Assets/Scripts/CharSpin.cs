@@ -15,6 +15,6 @@ public class CharSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, StandardSpeed * Time.deltaTime, 0));    
+        transform.Rotate(new Vector3(StandardSpeed * Time.deltaTime, StandardSpeed * Time.deltaTime, StandardSpeed * Time.deltaTime));    
     }
 }
