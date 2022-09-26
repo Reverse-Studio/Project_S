@@ -461,7 +461,6 @@ GameObject:
   m_Component:
   - component: {fileID: 251728252}
   - component: {fileID: 251728251}
-  - component: {fileID: 251728253}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -500,36 +499,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &251728253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251728250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f80b5a729ad0bc8428b328b64c4df392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mapPrefab:
-  - {fileID: 596835271}
-  - {fileID: 1822162694}
-  - {fileID: 996053319}
-  - {fileID: 1193227139}
-  - {fileID: 1772021085}
-  - {fileID: 873231313}
-  - {fileID: 2088769456}
-  - {fileID: 1860333518}
-  - {fileID: 2001679971}
-  player: {fileID: 1884020937}
-  rangeObjectPrefab: {fileID: 5692355840091218437, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
-  rangeObject:
-  - {fileID: 168979485}
-  - {fileID: 597201450}
-  - {fileID: 1655641067}
-  - {fileID: 1795412786}
-  count: 4
 --- !u!1001 &264308892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3343,6 +3312,7 @@ GameObject:
   - component: {fileID: 1342730079}
   - component: {fileID: 1342730078}
   - component: {fileID: 1893408104}
+  - component: {fileID: 1893408105}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8425,6 +8395,36 @@ MonoBehaviour:
   health: {fileID: 2065635827}
   currentHealth: 0
   delayTime: 0.5
+--- !u!114 &1893408105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884020937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80b5a729ad0bc8428b328b64c4df392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapPrefab:
+  - {fileID: 596835271}
+  - {fileID: 1822162694}
+  - {fileID: 996053319}
+  - {fileID: 1193227139}
+  - {fileID: 1772021085}
+  - {fileID: 873231313}
+  - {fileID: 2088769456}
+  - {fileID: 1860333518}
+  - {fileID: 2001679971}
+  player: {fileID: 1884020937}
+  rangeObjectPrefab: {fileID: 5692355840091218437, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+  rangeObject:
+  - {fileID: 168979485}
+  - {fileID: 597201450}
+  - {fileID: 1655641067}
+  - {fileID: 1795412786}
+  count: 4
 --- !u!1001 &1949020445
 PrefabInstance:
   m_ObjectHideFlags: 0

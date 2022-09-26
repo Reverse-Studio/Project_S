@@ -20,40 +20,40 @@ public class MoveMap : MonoBehaviour
     }
 
     private void Update() {
-        if(posX - player.gameObject.transform.position.x <= -20) { // arr[3] 방향
-            RightMoveMap();
-        }
-        if(posX - player.gameObject.transform.position.x >= 20) { // arr[5] 방향
-            LeftMoveMap();
-        }
-        if(posZ - player.gameObject.transform.position.z <= -20) { // arr[7] 방향
-            UpMoveMap();
-        }
-        if(posZ - player.gameObject.transform.position.z >= 20) { // arr[1] 방향
-            DownMoveMap();
-        }
+        // if(posX - player.gameObject.transform.position.x <= -20) { // arr[3] 방향
+        //     RightMoveMap();
+        // }
+        // if(posX - player.gameObject.transform.position.x >= 20) { // arr[5] 방향
+        //     LeftMoveMap();
+        // }
+        // if(posZ - player.gameObject.transform.position.z <= -20) { // arr[7] 방향
+        //     UpMoveMap();
+        // }
+        // if(posZ - player.gameObject.transform.position.z >= 20) { // arr[1] 방향
+        //     DownMoveMap();
+        // }
         // for(int i = 0; i < count; i++) {
         //     rangeObject[i] = Instantiate(rangeObject[i], this.transform.position, Quaternion.identity);
         //     rangeObject[i].transform.parent = mapPrefab[4].transform;
         // }
     }
 
-    void OnTriggerEnter(Collider col) {
+    void OnTriggerExit(Collider col) {
         if(col.tag == ("Chunk")) {
             UpMoveMap();
-            DeleteRangeObject();
+            MoveRangeObject();
         }
         if(col.tag == ("Chunk1")) {
             LeftMoveMap();
-            DeleteRangeObject();
+            MoveRangeObject();
         }
         if(col.tag == ("Chunk2")) {
             RightMoveMap();
-            DeleteRangeObject();
+            MoveRangeObject();
         }
         if(col.tag == ("Chunk3")) {
             DownMoveMap();
-            DeleteRangeObject();
+            MoveRangeObject();
         }
     }
 
@@ -98,13 +98,16 @@ public class MoveMap : MonoBehaviour
     }
 
     void MoveRangeObject() {
-    }
-
-    void DeleteRangeObject() {
         for(int i = 0; i < 4; i++) {
-            rangeObject[i].gameObject.SetActive(false);
+            rangeObject[i].transform.SetParent(mapPrefab[4].transform, false);
         }
     }
+
+    // void DeleteRangeObject() {
+    //     for(int i = 0; i < 4; i++) {
+    //         rangeObject[i].gameObject.SetActive(false);
+    //     }
+    // }
 
     void Swap(GameObject[] arr, int i, int j, int k) {
         GameObject tmp = arr[i];
