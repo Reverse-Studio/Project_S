@@ -6,20 +6,21 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Player player;
     private static GameManager __instance__ = null;
     public static GameManager INSTANCE { get => __instance__; }
+    public static bool IsPause = false;
+
     private GameObject orb;
-    bool isPause = false;
-    public GameObject death;
+
+    [SerializeField] private Player player;
+    [SerializeField] private GameObject death;
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject button;
 
     private void Awake()
     {
-        Debug.Log(__instance__);
         if (__instance__ != null) Destroy(__instance__.gameObject);
-        
+
         orb = Resources.Load<GameObject>("Prefab/ExpOrb");
         pause.SetActive(false);
         death.SetActive(false);
@@ -39,11 +40,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        Debug.Log(player.currentHealth);
-    }
-
     public void SpawnExpOrb(Vector3 location, int amount)
     {
         GameObject orbInst = Instantiate(orb, location, Quaternion.identity);
@@ -53,21 +49,21 @@ public class GameManager : MonoBehaviour
 
     public void SetPause()
     {
-        if (isPause == false)
+        if (IsPause == false)
         {
             button.SetActive(false);
             Time.timeScale = 0f;
-            isPause = true;
+            IsPause = true;
         }
     }
 
     public void SetStart()
     {
-        if (isPause == true)
+        if (IsPause == true)
         {
             button.SetActive(true);
             Time.timeScale = 1f;
-            isPause = false;
+            IsPause = false;
         }
     }
 }

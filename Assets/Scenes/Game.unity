@@ -461,6 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251728252}
   - component: {fileID: 251728251}
+  - component: {fileID: 251728253}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -499,6 +500,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &251728253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251728250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b51c5982dde23f4dbc1d360c57e7884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 196320, guid: 817c1ed62daa66b43a96440ab8425d8b, type: 3}
+  Radius: 30
 --- !u!1001 &264308892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8463,7 +8478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d9584c2c7f09143907b7831ca5327a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expOrb: {fileID: 0}
   health: {fileID: 2065635827}
   currentHealth: 0
   delayTime: 0.5

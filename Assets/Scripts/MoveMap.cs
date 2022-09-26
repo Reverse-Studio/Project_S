@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class MoveMap : MonoBehaviour
 {
-    public GameObject[] mapPrefab; 
+    public GameObject[] mapPrefab;
     public GameObject player;
     public GameObject rangeObjectPrefab;
     public GameObject[] rangeObject;
     public int count = 4;
-    
+
     private float posX;
     private float posZ;
-    
 
-    private void Start() {
+
+    private void Start()
+    {
         posX = player.gameObject.transform.position.x; // 0
         posZ = player.gameObject.transform.position.z; // 0
     }
 
-    private void Update() {
+    private void Update()
+    {
         // if(posX - player.gameObject.transform.position.x <= -20) { // arr[3] 방향
         //     RightMoveMap();
         // }
@@ -38,26 +40,32 @@ public class MoveMap : MonoBehaviour
         // }
     }
 
-    void OnTriggerExit(Collider col) {
-        if(col.tag == ("Chunk")) {
+    void OnTriggerExit(Collider col)
+    {
+        if (col.tag == ("Chunk"))
+        {
             UpMoveMap();
             MoveRangeObject();
         }
-        if(col.tag == ("Chunk1")) {
+        if (col.tag == ("Chunk1"))
+        {
             LeftMoveMap();
             MoveRangeObject();
         }
-        if(col.tag == ("Chunk2")) {
+        if (col.tag == ("Chunk2"))
+        {
             RightMoveMap();
             MoveRangeObject();
         }
-        if(col.tag == ("Chunk3")) {
+        if (col.tag == ("Chunk3"))
+        {
             DownMoveMap();
             MoveRangeObject();
         }
     }
 
-    void DownMoveMap() {
+    void DownMoveMap()
+    {
         Swap(mapPrefab, 0, 3, 6);
         Swap(mapPrefab, 1, 4, 7);
         Swap(mapPrefab, 2, 5, 8);
@@ -67,7 +75,8 @@ public class MoveMap : MonoBehaviour
         posZ = player.gameObject.transform.position.z;
     }
 
-    void UpMoveMap() {
+    void UpMoveMap()
+    {
         Swap(mapPrefab, 6, 3, 0);
         Swap(mapPrefab, 7, 4, 1);
         Swap(mapPrefab, 8, 5, 2);
@@ -77,7 +86,8 @@ public class MoveMap : MonoBehaviour
         posZ = player.gameObject.transform.position.z;
     }
 
-    void RightMoveMap() {
+    void RightMoveMap()
+    {
         Swap(mapPrefab, 0, 1, 2);
         Swap(mapPrefab, 3, 4, 5);
         Swap(mapPrefab, 6, 7, 8);
@@ -87,7 +97,8 @@ public class MoveMap : MonoBehaviour
         posX = player.gameObject.transform.position.x;
     }
 
-    void LeftMoveMap() {
+    void LeftMoveMap()
+    {
         Swap(mapPrefab, 2, 1, 0);
         Swap(mapPrefab, 5, 4, 3);
         Swap(mapPrefab, 8, 7, 6);
@@ -97,8 +108,10 @@ public class MoveMap : MonoBehaviour
         posX = player.gameObject.transform.position.x;
     }
 
-    void MoveRangeObject() {
-        for(int i = 0; i < 4; i++) {
+    void MoveRangeObject()
+    {
+        for (int i = 0; i < 4; i++)
+        {
             rangeObject[i].transform.SetParent(mapPrefab[4].transform, true);
         }
     }
@@ -109,7 +122,8 @@ public class MoveMap : MonoBehaviour
     //     }
     // }
 
-    void Swap(GameObject[] arr, int i, int j, int k) {
+    void Swap(GameObject[] arr, int i, int j, int k)
+    {
         GameObject tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = arr[k];

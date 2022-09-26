@@ -1,28 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform target;
-    Vector3 destination;
-    NavMeshAgent agent;
+    [SerializeField] private float speed;
+    private Transform target;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        destination = agent.destination;
+        target = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Vector3.Distance(destination, target.position) > 1.0f)
+        if (Vector3.Distance(transform.position, target.position) > 1.0f)
         {
-            destination = target.position;
-            agent.destination = destination;
+            transform.LookAt(target, Vector3.up);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
     }
 }
