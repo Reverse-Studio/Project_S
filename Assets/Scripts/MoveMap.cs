@@ -112,7 +112,7 @@ public class MoveMap : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            rangeObject[i].transform.SetParent(mapPrefab[4].transform, true);
+            rangeObject[i].transform.SetParent(mapPrefab[4].transform, false);
         }
     }
 
