@@ -5,10 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public PlayerHealth health;
-    public Gradient gradient;
-
+    private Gradient gradient;
     int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
     private float countTime;
     public float delayTime = 0.5f;
 
@@ -16,16 +15,18 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        health.SetMaxHealth(maxHealth);
         gradient.Evaluate(1f);
+        health.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentHealth--;
-        if (currentHealth < 0) currentHealth += maxHealth;
-        health.SetHealth(currentHealth);
+
+    }
+
+    void main(){
+        
     }
 
     void OnTriggerEnter(Collider col) {
