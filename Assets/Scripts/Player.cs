@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public partial class Player : MonoBehaviour
 {
     public PlayerHealth health;
     private Gradient gradient;
@@ -29,8 +29,10 @@ public class Player : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider col) {
-        if(col.tag == ("Chunk")) {
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == ("Chunk"))
+        {
             Debug.Log(col);
         }
     }
@@ -40,7 +42,8 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             countTime += Time.deltaTime;
-            if (countTime >= delayTime) {
+            if (countTime >= delayTime)
+            {
                 countTime -= delayTime;
                 currentHealth -= 10;
                 health.SetHealth(currentHealth);
