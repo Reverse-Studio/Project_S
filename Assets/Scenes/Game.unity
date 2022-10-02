@@ -397,6 +397,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1772021086}
     m_Modifications:
+    - target: {fileID: 1435310474971461367, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435310474971461367, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5692355840091218437, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
       propertyPath: m_Name
       value: RangePlane
@@ -870,6 +878,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1772021086}
     m_Modifications:
+    - target: {fileID: 1435310474971461367, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435310474971461367, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5692355840091218437, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
       propertyPath: m_Name
       value: RangePlane (1)
@@ -8518,6 +8534,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1772021086}
     m_Modifications:
+    - target: {fileID: 1435310474971461367, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435310474971461367, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5692355840091218437, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
       propertyPath: m_Name
       value: RangePlane (3)
@@ -9017,6 +9041,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1772021086}
     m_Modifications:
+    - target: {fileID: 1435310474971461367, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435310474971461367, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5692355840091218437, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
       propertyPath: m_Name
       value: RangePlane (2)
