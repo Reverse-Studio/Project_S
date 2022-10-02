@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GoToMain : MonoBehaviour
 {
+    public Player player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,9 @@ public class GoToMain : MonoBehaviour
     public void GoToMainScene()
     {
         SceneManager.LoadScene(0);
+        
+    }
+    public void PlayerSetHealth(){
+        player.currentHealth = 100;
     }
 }

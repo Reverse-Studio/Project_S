@@ -6,21 +6,20 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public Player player;
     private static GameManager __instance__ = null;
     public static GameManager INSTANCE { get => __instance__; }
-    public static bool IsPause = false;
-
     private GameObject orb;
-
-    [SerializeField] private Player player;
-    [SerializeField] private GameObject death;
+    bool isPause = false;
+    public GameObject death;
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject button;
 
     private void Awake()
     {
+        Debug.Log(__instance__);
         if (__instance__ != null) Destroy(__instance__.gameObject);
-
+        
         orb = Resources.Load<GameObject>("Prefab/ExpOrb");
         pause.SetActive(false);
         death.SetActive(false);
@@ -40,6 +39,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(player.currentHealth == 0 && isPause == false){
+            death.SetActive(true);
+            button.SetActive(false);
+            Time.timeScale = 0f;
+            isPause = true;
+        }
+    }
+
     public void SpawnExpOrb(Vector3 location, int amount)
     {
         GameObject orbInst = Instantiate(orb, location, Quaternion.identity);
@@ -49,21 +58,25 @@ public class GameManager : MonoBehaviour
 
     public void SetPause()
     {
-        if (IsPause == false)
+        if (isPause == false)
         {
             button.SetActive(false);
             Time.timeScale = 0f;
-            IsPause = true;
+            isPause = true;
         }
     }
 
     public void SetStart()
     {
-        if (IsPause == true)
+        if (isPause == true)
         {
             button.SetActive(true);
             Time.timeScale = 1f;
-            IsPause = false;
+            isPause = false;
         }
+    }
+
+    public void SetPlayerHealth(){
+        player.currentHealth = 100;
     }
 }
