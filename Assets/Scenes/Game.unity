@@ -8514,7 +8514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80b5a729ad0bc8428b328b64c4df392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapPrefab:
+  mapPlaneObject:
   - {fileID: 596835271}
   - {fileID: 1822162694}
   - {fileID: 996053319}
@@ -8525,13 +8525,11 @@ MonoBehaviour:
   - {fileID: 1860333518}
   - {fileID: 2001679971}
   player: {fileID: 1884020937}
-  rangeObjectPrefab: {fileID: 5692355840091218437, guid: 57b5b1ab71484694b8aef18902f3c7bb, type: 3}
-  rangeObject:
+  chunkRangePlaneObject:
   - {fileID: 168979485}
   - {fileID: 597201450}
   - {fileID: 1655641067}
   - {fileID: 1795412786}
-  count: 4
 --- !u!1001 &1949020445
 PrefabInstance:
   m_ObjectHideFlags: 0

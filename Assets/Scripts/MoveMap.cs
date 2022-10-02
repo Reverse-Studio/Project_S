@@ -45,17 +45,17 @@ public class MoveMap : MonoBehaviour
             UpMoveMap();
             MoveRangeObject();
         }
-        else if (col.tag == ("Chunk1"))
+        if (col.tag == ("Chunk1"))
         {
             LeftMoveMap();
             MoveRangeObject();
         }
-        else if (col.tag == ("Chunk2"))
+        if (col.tag == ("Chunk2"))
         {
             RightMoveMap();
             MoveRangeObject();
         }
-        else if (col.tag == ("Chunk3"))
+        if (col.tag == ("Chunk3"))
         {
             DownMoveMap();
             MoveRangeObject();
