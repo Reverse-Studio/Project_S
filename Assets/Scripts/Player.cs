@@ -1,29 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public partial class Player : MonoBehaviour
 {
+    public TextMeshProUGUI playerLevel;
     public PlayerHealth health;
-    public ExpSet expSet;
+    public GameManager gameManager;
     int maxHealth = 100;
     public int currentHealth;
     private float countTime;
     public float delayTime = 0.5f;
-    private int[] maxExp = {30, 120, 300, 500, 800, 1200, 1800, 2500, 3200, 3800, 4500, 5200, 6000, 7000, 8200};
-    public int currentExp;
-    public int lv = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
+        SetMaxExp(experienceToNextLevel[level]);
+        SetExp(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        playerLevel.text = level.ToString();
     }
 
     void main(){
@@ -38,7 +41,8 @@ public partial class Player : MonoBehaviour
         }
 
         if (col.tag == ("Exp")){
-
+            AddExperience(30);
+            SetExp(experience);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -54,7 +58,7 @@ public partial class Player : MonoBehaviour
             }
         }
         if (other.CompareTag("Exp")){
-
+            
         }
     }
 

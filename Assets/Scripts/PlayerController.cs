@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
         Vector3 inputDir = Vector3.forward * controller.Vertical;
         inputDir += Vector3.right * controller.Horizontal;
 
+        inputDir.Normalize();
+
         playerAnim.SetFloat("Speed_f", Vector3.Distance(inputDir, Vector3.zero));
 
         if(inputDir == Vector3.zero) return;

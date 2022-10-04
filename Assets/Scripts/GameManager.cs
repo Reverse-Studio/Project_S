@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     bool isPause = false;
     public GameObject death;
     [SerializeField] private GameObject pause;
-    [SerializeField] private GameObject button;
+    [SerializeField] private GameObject pauseButton;
     private void Awake()
     {
         Debug.Log(__instance__);
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         if(player.currentHealth == 0 && isPause == false){
             death.SetActive(true);
-            button.SetActive(false);
+            pauseButton.SetActive(false);
             Time.timeScale = 0f;
             isPause = true;
         }
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         if (isPause == false)
         {
-            button.SetActive(false);
+            pauseButton.SetActive(false);
             Time.timeScale = 0f;
             isPause = true;
         }
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         if (isPause == true)
         {
-            button.SetActive(true);
+            pauseButton.SetActive(true);
             Time.timeScale = 1f;
             isPause = false;
         }
@@ -77,5 +77,14 @@ public class GameManager : MonoBehaviour
 
     public void SetPlayerHealth(){
         player.currentHealth = 100;
+    }
+
+    public void LevelUp(){
+        if(isPause == false){
+            death.SetActive(true);
+            pauseButton.SetActive(false);
+            isPause = true;
+            Time.timeScale = 0f;
+        }
     }
 }
