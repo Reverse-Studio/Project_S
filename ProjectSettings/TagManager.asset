@@ -9,6 +9,7 @@ TagManager:
   - Chunk1
   - Chunk2
   - Chunk3
+  - Exp
   layers:
   - Default
   - TransparentFX

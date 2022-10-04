@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1591348407495220165}
   m_Layer: 0
   m_Name: ExpOrb
-  m_TagString: Untagged
+  m_TagString: Exp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4851,4 +4851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276bbad4ac0c7e545aa46bf104597111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentExp: 0
+  level: 0
   MagnetDistance: 3

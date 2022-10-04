@@ -3,17 +3,16 @@ public class ExpOrb : MonoBehaviour
 {
     private GameObject Player;
     private ParticleSystem particle;
-
+    
     [SerializeField] private float MagnetDistance;
-
     private void Awake()
     {
         particle = GetComponent<ParticleSystem>();
+        Player = GameObject.Find("Player");
     }
 
     private void Start()
     {
-        Player = GameObject.Find("Player");
     }
 
     private void Update()
@@ -43,6 +42,7 @@ public class ExpOrb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.tag != "Player") return;
 
         Player player = other.gameObject.GetComponent<Player>();

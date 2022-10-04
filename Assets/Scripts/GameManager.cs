@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public GameObject death;
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject button;
-
     private void Awake()
     {
         Debug.Log(__instance__);

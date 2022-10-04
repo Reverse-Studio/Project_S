@@ -5,23 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GoToMain : MonoBehaviour
+public class GiveUp : MonoBehaviour
 {
     public Player player;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void GoToMainScene()
+    public void OnclickGiveUp()
     {
         SceneManager.LoadScene(0);
         
