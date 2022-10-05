@@ -10,11 +10,6 @@ public class ExpOrb : MonoBehaviour
         particle = GetComponent<ParticleSystem>();
         Player = GameObject.Find("Player");
     }
-
-    private void Start()
-    {
-    }
-
     private void Update()
     {
         if (MagnetDistance == -1 || Vector3.Distance(transform.position, Player.transform.position) <= MagnetDistance)
