@@ -10,12 +10,21 @@ public class MoveMap : MonoBehaviour
 
     private float posX;
     private float posZ;
+    private float directionRight;
+    private float directionLeft;
+    private float directionUp;
+    private float directionDown;
 
 
     private void Start()
     {
         posX = player.gameObject.transform.position.x; // 0
         posZ = player.gameObject.transform.position.z; // 0
+
+        directionRight = 15;
+        directionLeft = -15;
+        directionUp = 15;
+        directionDown = -15;
     }
 
     private void Update()
@@ -30,37 +39,54 @@ public class MoveMap : MonoBehaviour
         //     UpMoveMap();
         // }
         // if(posZ - player.gameObject.transform.position.z >= 20) { // arr[1] 방향
-        //     DownMoveMap();
+        //     
         // }
-        // for(int i = 0; i < count; i++) {
-        //     rangeObject[i] = Instantiate(rangeObject[i], this.transform.position, Quaternion.identity);
-        //     rangeObject[i].transform.parent = mapPrefab[4].transform;
-        // }
+            if(player.gameObject.transform.position.x >= directionRight) {
+                RightMoveMap();
+                directionRight += 30;
+                directionLeft += 30;
+            }
+            if(player.gameObject.transform.position.x <= directionLeft) {
+                LeftMoveMap();
+                directionRight -= 30;
+                directionLeft -= 30;
+            }
+            if(player.gameObject.transform.position.z <= directionDown) {
+                DownMoveMap();
+                directionUp -= 30;
+                directionDown -= 30;
+            }
+            if(player.gameObject.transform.position.z >= directionUp) {
+                UpMoveMap();
+                directionUp += 30;
+                directionDown += 30;
+            }        
+        
     }
 
-    void OnTriggerExit(Collider col)
-    {
-        if (col.tag == ("Chunk"))
-        {
-            UpMoveMap();
-            MoveRangeObject();
-        }
-        if (col.tag == ("Chunk1"))
-        {
-            LeftMoveMap();
-            MoveRangeObject();
-        }
-        if (col.tag == ("Chunk2"))
-        {
-            RightMoveMap();
-            MoveRangeObject();
-        }
-        if (col.tag == ("Chunk3"))
-        {
-            DownMoveMap();
-            MoveRangeObject();
-        }
-    }
+    // void OnTriggerExit(Collider col)
+    // {
+    //     if (col.tag == ("Chunk"))
+    //     {
+    //         UpMoveMap();
+    //         MoveRangeObject();
+    //     }
+    //     if (col.tag == ("Chunk1"))
+    //     {
+    //         LeftMoveMap();
+    //         MoveRangeObject();
+    //     }
+    //     if (col.tag == ("Chunk2"))
+    //     {
+    //         RightMoveMap();
+    //         MoveRangeObject();
+    //     }
+    //     if (col.tag == ("Chunk3"))
+    //     {
+    //         DownMoveMap();
+    //         MoveRangeObject();
+    //     }
+    // }
 
     void DownMoveMap()
     {
