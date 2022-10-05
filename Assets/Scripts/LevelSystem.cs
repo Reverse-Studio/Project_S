@@ -14,7 +14,6 @@ public partial class Player : MonoBehaviour
         experience += amount;
         if (experience >= experienceToNextLevel[level])
         {
-            
             experience -= experienceToNextLevel[level];
             level++;
             SetMaxExp(experienceToNextLevel[level]);
