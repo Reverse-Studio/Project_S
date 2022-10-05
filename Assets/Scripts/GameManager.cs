@@ -28,14 +28,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SetStart();
-        for (int i = 0; i < 10; i++)
-        {
-            for (int j = 0; j < 10; j++)
-            {
-                Vector3 location = new Vector3(i * 10, 0, j * 10);
-                SpawnExpOrb(location, Random.Range(1, 15));
-            }
-        }
     }
 
     private void Update()
