@@ -5,14 +5,21 @@ using UnityEngine.UI;
 
 public class ExpSet : MonoBehaviour
 {
-    public Slider slider;
+    private Slider slider;
 
-    public void SetMaxExp(int MaxExp){
+    void Start()
+    {
+        slider = GetComponent<Slider>();
+    }
+
+    public void SetMaxExp(int MaxExp)
+    {
         slider.maxValue = MaxExp;
         slider.value = 0;
     }
 
-    public void SetExp(int Exp){
+    public void SetExp(int Exp)
+    {
         slider.value = Exp;
     }
 }

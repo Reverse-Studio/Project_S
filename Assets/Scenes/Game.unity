@@ -1115,6 +1115,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8851369940016450223, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_text
+      value: Skill3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940338621942, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_text
+      value: Skill2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940446010465, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_text
+      value: Skill1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940552073240, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_text
+      value: Skill4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940632615384, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_text
+      value: LEVEL UP!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
 --- !u!1 &251728250
@@ -3236,8 +3256,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
