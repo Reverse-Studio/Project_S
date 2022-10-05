@@ -6,6 +6,7 @@ using TMPro;
 
 public partial class Player : MonoBehaviour
 {
+    public ExpSet expSet;
     public TextMeshProUGUI playerLevel;
     public PlayerHealth health;
     public GameManager gameManager;
@@ -19,8 +20,8 @@ public partial class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
-        SetMaxExp(experienceToNextLevel[level]);
-        SetExp(0);
+        expSet.SetMaxExp(experienceToNextLevel[level]);
+        expSet.SetExp(0);
     }
 
     // Update is called once per frame
@@ -42,7 +43,6 @@ public partial class Player : MonoBehaviour
 
         if (col.tag == ("Exp")){
             AddExperience(30);
-            SetExp(experience);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -56,9 +56,6 @@ public partial class Player : MonoBehaviour
                 currentHealth -= 10;
                 health.SetHealth(currentHealth);
             }
-        }
-        if (other.CompareTag("Exp")){
-            
         }
     }
 

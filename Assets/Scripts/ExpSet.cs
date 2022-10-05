@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public partial class Player : MonoBehaviour
+public class ExpSet : MonoBehaviour
 {
     public Slider slider;
 

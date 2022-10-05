@@ -12,11 +12,12 @@ public partial class Player : MonoBehaviour
     public void AddExperience(int amount)
     {
         experience += amount;
+        expSet.SetExp(experience);
         if (experience >= experienceToNextLevel[level])
         {
             experience -= experienceToNextLevel[level];
             level++;
-            SetMaxExp(experienceToNextLevel[level]);
+            expSet.SetMaxExp(experienceToNextLevel[level]);
             pauseButton.SetActive(false);
             levelUp.SetActive(true);
             Time.timeScale = 0f;
