@@ -8,13 +8,8 @@ public class ElectricBall : Skill
     [SerializeField] private GameObject player;
     [SerializeField] private float radius;
     [SerializeField] private float speed;
-    private float rotation = 0;
 
-    private void Start()
-    {
-        Debug.Log("Hello World");
-    }
-
+    private float angle = 0;
 
     private void Update()
     {
@@ -23,15 +18,20 @@ public class ElectricBall : Skill
 
     private void Rotate()
     {
-        rotation += Time.deltaTime * speed;
-        if (rotation > Mathf.PI * 2) rotation -= Mathf.PI * 2;
+        angle += Time.deltaTime * speed;
+        if (angle > Mathf.PI * 2) angle -= Mathf.PI * 2;
 
         Vector3 pos = player.transform.position;
 
-        float x = Mathf.Cos(rotation) * radius + pos.x;
+        float x = Mathf.Cos(angle) * radius + pos.x;
         float y = 1.5f;
-        float z = Mathf.Sin(rotation) * radius + pos.z;
+        float z = Mathf.Sin(angle) * radius + pos.z;
 
         transform.position = new Vector3(x, y, z);
+    }
+
+    protected override void OnHit(Enemy enemy)
+    {
+        enemy.DoDamage(Damage);
     }
 }
