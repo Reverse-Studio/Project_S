@@ -10,6 +10,7 @@ TagManager:
   - Chunk2
   - Chunk3
   - Exp
+  - skill
   layers:
   - Default
   - TransparentFX
