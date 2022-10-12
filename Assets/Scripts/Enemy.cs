@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float health;
+    [SerializeField] private bool isDead;
 
     private Transform target;
     private CharacterController charController;
@@ -25,6 +26,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (isDead) return;
+
         if (Vector3.Distance(transform.position, target.position) > 1.0f)
         {
             transform.LookAt(target, Vector3.up);
@@ -38,8 +41,10 @@ public class Enemy : MonoBehaviour
 
     public void DoDamage(float DamageAmount)
     {
+        if (isDead) return;
+
         if (invulnerable > 0) return;
-        invulnerable = 0.5f;
+        invulnerable = 0.1f;
 
         health -= DamageAmount;
 
@@ -52,7 +57,12 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        isDead = true;
         GameManager.INSTANCE.SpawnExpOrb(transform.position, 30);
-        Destroy(gameObject);
+        Animator animator = GetComponent<Animator>();
+        Collider collider = GetComponent<Collider>();
+        Destroy(collider);
+        animator.SetBool("isDead", true);
+        Destroy(gameObject, animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
     }
 }

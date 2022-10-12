@@ -8,14 +8,10 @@ public class Skill : MonoBehaviour
     public float Damage { get => damage; }
 
     /* Enemy가 처음 닿았을 때 호출 */
-    protected virtual void OnHit(Enemy enemy)
-    {
-    }
+    protected virtual void OnHit(Enemy enemy) { }
 
     /* Enemy가 닿고 있을 때 호출 */
-    protected virtual void OnHitting(Enemy enemy)
-    {
-    }
+    protected virtual void OnHitting(Enemy enemy) { }
 
     private void OnTriggerEnter(Collider other)
     {
