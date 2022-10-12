@@ -14,11 +14,12 @@ public class GameManager : MonoBehaviour
     public GameObject death;
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject damage;
     private void Awake()
     {
         Debug.Log(__instance__);
         if (__instance__ != null) Destroy(__instance__.gameObject);
-        
+
         orb = Resources.Load<GameObject>("Prefab/ExpOrb");
         pause.SetActive(false);
         death.SetActive(false);
@@ -32,7 +33,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(player.currentHealth == 0 && isPause == false){
+        if (player.currentHealth == 0 && isPause == false)
+        {
             death.SetActive(true);
             pauseButton.SetActive(false);
             Time.timeScale = 0f;
@@ -67,16 +69,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetPlayerHealth(){
+    public void SetPlayerHealth()
+    {
         player.currentHealth = 100;
     }
 
-    public void LevelUp(){
-        if(isPause == false){
+    public void LevelUp()
+    {
+        if (isPause == false)
+        {
             death.SetActive(true);
             pauseButton.SetActive(false);
             isPause = true;
             Time.timeScale = 0f;
         }
+    }
+
+    public void ShowDamage(Vector3 position, float damage)
+    {
+        GameObject inst = Instantiate(this.damage);
+        DamageEffect effect = inst.GetComponent<DamageEffect>();
+        effect.damage = damage;
+        inst.transform.position = position;
     }
 }

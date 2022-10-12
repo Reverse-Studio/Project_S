@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
         invulnerable = 0.1f;
 
         health -= DamageAmount;
+        GameManager.INSTANCE.ShowDamage(transform.position, DamageAmount);
 
         if (health <= 0)
         {
