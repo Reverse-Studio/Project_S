@@ -1190,6 +1190,14 @@ PrefabInstance:
       propertyPath: m_text
       value: LEVEL UP!
       objectReference: {fileID: 0}
+    - target: {fileID: 8851369940632615384, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940632615384, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
 --- !u!1 &251728250
@@ -1646,6 +1654,14 @@ PrefabInstance:
     - target: {fileID: 8851369939653133406, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940632615384, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940632615384, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
@@ -2909,6 +2925,14 @@ PrefabInstance:
     - target: {fileID: 8851369940632615384, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
       propertyPath: m_text
       value: YOU DIED
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940632615384, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851369940632615384, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb0b116f996c77943bb855d5498bf7b9, type: 3}
