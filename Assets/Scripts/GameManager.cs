@@ -84,11 +84,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ShowDamage(Vector3 position, float damage)
+    public void ShowDamage(Vector3 position, float damage, Color color)
     {
         GameObject inst = Instantiate(this.damage);
         DamageEffect effect = inst.GetComponent<DamageEffect>();
+
         effect.damage = damage;
-        inst.transform.position = position;
+        effect.color = color;
+
+        inst.transform.position = position + Vector3.up;
     }
 }

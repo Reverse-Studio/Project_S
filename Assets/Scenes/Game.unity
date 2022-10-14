@@ -542,7 +542,19 @@ PrefabInstance:
       value: -28
       objectReference: {fileID: 0}
     - target: {fileID: 2807888510546422845, guid: b7b5be0a36661483b98b48cb82ce2625, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807888510546422845, guid: b7b5be0a36661483b98b48cb82ce2625, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807888510546422845, guid: b7b5be0a36661483b98b48cb82ce2625, type: 3}
       propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807888510546422845, guid: b7b5be0a36661483b98b48cb82ce2625, type: 3}
+      propertyPath: m_WholeNumbers
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8887317546610908661, guid: b7b5be0a36661483b98b48cb82ce2625, type: 3}
@@ -10233,6 +10245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d9584c2c7f09143907b7831ca5327a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
+  experience: 0
+  nextExp: 0
   pauseButton: {fileID: 10148484}
   levelUp: {fileID: 1444980285}
   expSet: {fileID: 1095555687}

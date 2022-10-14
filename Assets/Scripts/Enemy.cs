@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         invulnerable = 0.1f;
 
         health -= DamageAmount;
-        GameManager.INSTANCE.ShowDamage(transform.position, DamageAmount);
+        GameManager.INSTANCE.ShowDamage(transform.position, DamageAmount, Color.white);
 
         if (health <= 0)
         {
@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
     private void Death()
     {
         isDead = true;
-        GameManager.INSTANCE.SpawnExpOrb(transform.position + Vector3.up, 30);
+        GameManager.INSTANCE.SpawnExpOrb(transform.position + Vector3.up, Random.Range(3, 5));
         Animator animator = GetComponent<Animator>();
         Collider collider = GetComponent<Collider>();
         Destroy(collider);

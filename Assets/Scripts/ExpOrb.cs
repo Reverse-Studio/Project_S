@@ -19,7 +19,7 @@ public class ExpOrb : MonoBehaviour
         }
     }
 
-    private const int MaxAmount = 15;
+    private const int MaxAmount = 5;
 
     private int amount = 0;
 

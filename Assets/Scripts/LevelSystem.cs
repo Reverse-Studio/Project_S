@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 public partial class Player : MonoBehaviour
 {
-    private int level = 0;
-    private int experience = 0;
+    [SerializeField] private int level = 0;
+    [SerializeField] private int experience = 0;
+    [SerializeField] private int nextExp = 30;
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject levelUp;
-    private int[] experienceToNextLevel = new int[] { 30, 120, 300, 500, 800, 1200, 1800, 2500, 3200, 3800, 4500, 5200, 6000, 7000, 8200 };
+
 
     public void AddExperience(int amount)
     {
         experience += amount;
         expSet.SetExp(experience);
-        if (experience >= experienceToNextLevel[level])
+        if (experience >= nextExp)
         {
-            experience -= experienceToNextLevel[level];
+            experience -= nextExp;
             level++;
-            expSet.SetMaxExp(experienceToNextLevel[level]);
+            nextExp = 30 + level * (level + 1);
+            expSet.SetMaxExp(nextExp);
             pauseButton.SetActive(false);
             levelUp.SetActive(true);
             Time.timeScale = 0f;
@@ -26,11 +28,12 @@ public partial class Player : MonoBehaviour
 
     public int Level { get => level; }
 
-    public void SelectSkill(){
+    public void SelectSkill()
+    {
         pauseButton.SetActive(true);
         levelUp.SetActive(false);
         Time.timeScale = 1f;
     }
 
-    public float experienceNormalized { get => (float)experience / experienceToNextLevel[level]; }
+    public float experienceNormalized { get => (float)experience / nextExp; }
 }

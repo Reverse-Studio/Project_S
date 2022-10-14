@@ -303,7 +303,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 120
   m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -859,7 +859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 784999710664063734, guid: 95ce38ef8b364492db1ef5947c08316f, type: 3}
       propertyPath: m_Name
-      value: "Btn \u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193"
+      value: BG
       objectReference: {fileID: 0}
     - target: {fileID: 784999710664063735, guid: 95ce38ef8b364492db1ef5947c08316f, type: 3}
       propertyPath: m_Pivot.x
