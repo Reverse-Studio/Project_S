@@ -15,4 +15,9 @@ public class HellZone : Skill
     {
         enemy.DoDamage(Damage);
     }
+
+    protected override void SetSkillLevel(int level)
+    {
+        Damage = baseDamage + (level - 1) * 2;
+    }
 }

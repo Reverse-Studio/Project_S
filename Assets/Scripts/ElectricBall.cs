@@ -34,4 +34,9 @@ public class ElectricBall : Skill
     {
         enemy.DoDamage(Damage);
     }
+
+    protected override void SetSkillLevel(int level)
+    {
+        Damage = baseDamage + (level - 1) * 10;
+    }
 }
