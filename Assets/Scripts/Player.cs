@@ -20,7 +20,7 @@ public partial class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
-        expSet.SetMaxExp(experienceToNextLevel[level]);
+        expSet.SetMaxExp(nextExp);
         expSet.SetExp(0);
     }
 
@@ -28,30 +28,17 @@ public partial class Player : MonoBehaviour
     void Update()
     {
         playerLevel.text = level.ToString();
+        if (countTime < delayTime)
+            countTime += Time.deltaTime;
     }
 
-    void main(){
-        
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == ("Chunk"))
-        {
-            Debug.Log(col);
-        }
-
-        if (col.tag == ("Exp")){
-            AddExperience(30);
-        }
-    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            countTime += Time.deltaTime;
             if (countTime >= delayTime)
             {
+                GameManager.INSTANCE.ShowDamage(transform.position, 10, Color.red);
                 countTime -= delayTime;
                 currentHealth -= 10;
                 health.SetHealth(currentHealth);

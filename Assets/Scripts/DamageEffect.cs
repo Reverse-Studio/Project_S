@@ -6,6 +6,7 @@ using TMPro;
 public class DamageEffect : MonoBehaviour
 {
     public float damage;
+    public Color color;
 
     private TextMeshPro text;
     [SerializeField] private float moveSpeed;
@@ -16,6 +17,7 @@ public class DamageEffect : MonoBehaviour
     private void Start()
     {
         text = GetComponent<TextMeshPro>();
+        text.color = color;
         alpha = text.color;
         text.text = damage.ToString();
 
