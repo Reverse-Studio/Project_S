@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharSpin : MonoBehaviour
+public class SkillButton : MonoBehaviour
 {
-    public float StandardSpeed = 100f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,6 @@ public class CharSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(StandardSpeed * Time.deltaTime, StandardSpeed * Time.deltaTime, StandardSpeed * Time.deltaTime));    
+        
     }
 }
