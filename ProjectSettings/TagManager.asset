@@ -48,3 +48,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: joystick
+    uniqueID: 1911692037
+    locked: 0
+  - name: ui
+    uniqueID: 3951632813
+    locked: 0
+  - name: ui_image
+    uniqueID: 2700449371
+    locked: 0

@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class SkillButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI TMPText;
+    public Image skillImage;
+
+    private Skill skill;
+    public Skill Skill
     {
-        
+        get => skill; 
+        set
+        {
+            skill = value;
+            TMPText.text = skill.name;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnCLick()
     {
-        
+        skill.SkillLevel++;
     }
 }

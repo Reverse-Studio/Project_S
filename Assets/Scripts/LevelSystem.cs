@@ -8,6 +8,7 @@ public partial class Player : MonoBehaviour
     [SerializeField] private int nextExp = 30;
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject levelUp;
+    [SerializeField] private SkillManager skillManager;
 
 
     public void AddExperience(int amount)
@@ -18,9 +19,10 @@ public partial class Player : MonoBehaviour
         {
             experience -= nextExp;
             level++;
-            nextExp = 30 + level * (level + 1);
+            nextExp = 30;// + level * (level + 1);
             expSet.SetMaxExp(nextExp);
             pauseButton.SetActive(false);
+            skillManager.ChangeSKills();
             levelUp.SetActive(true);
             Time.timeScale = 0f;
         }

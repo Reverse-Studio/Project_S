@@ -16,8 +16,15 @@ public class ExpSet : MonoBehaviour
 
     private void Update()
     {
-        float curScore = Mathf.SmoothDamp(slider.value, exp, ref currentVelocity, 10 * Time.deltaTime);
-        slider.value = curScore;
+        if (!GameManager.INSTANCE.isPause)
+        {
+            float curScore = Mathf.SmoothDamp(slider.value, exp, ref currentVelocity, 10 * Time.deltaTime);
+            slider.value = curScore;
+
+            Debug.Log(Time.deltaTime);
+            Debug.Log(Time.timeScale);
+            Debug.Log(curScore);
+        }
     }
 
     public void SetMaxExp(int MaxExp)

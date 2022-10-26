@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private static GameManager __instance__ = null;
     public static GameManager INSTANCE { get => __instance__; }
     private GameObject orb;
-    bool isPause = false;
+    public bool isPause = false;
     public GameObject death;
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject pauseButton;
