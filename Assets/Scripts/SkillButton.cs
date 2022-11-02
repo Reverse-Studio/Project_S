@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class SkillButton : MonoBehaviour
 {
     public TextMeshProUGUI TMPText;
-    public Image skillImage;
-
+    public Image image;
     private Skill skill;
+    //Skill=a
     public Skill Skill
     {
         get => skill; 
@@ -17,6 +17,7 @@ public class SkillButton : MonoBehaviour
         {
             skill = value;
             TMPText.text = skill.name;
+            image.sprite = skill.SkillImage;
         }
     }
 

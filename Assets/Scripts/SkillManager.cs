@@ -4,23 +4,8 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
-    public GameObject GElectricBall;
-    public GameObject GLazer;
-    public GameObject GHellZone;
-    private GameObject[] skills;
+    [SerializeField] private GameObject[] skills;
     public SkillButton[] cards;
-    // Start is called before the first frame update
-    void Start()
-    {
-        skills = new GameObject[] { GElectricBall, GLazer, GHellZone };
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void ChangeSKills()
     {
         Shuffle();

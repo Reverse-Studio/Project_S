@@ -17,6 +17,8 @@ public partial class Player : MonoBehaviour
         expSet.SetExp(experience);
         if (experience >= nextExp)
         {
+            //SoundManager.INSTANCE.Play()
+            Time.timeScale = 0f;
             experience -= nextExp;
             level++;
             nextExp = 30;// + level * (level + 1);
@@ -24,7 +26,7 @@ public partial class Player : MonoBehaviour
             pauseButton.SetActive(false);
             skillManager.ChangeSKills();
             levelUp.SetActive(true);
-            Time.timeScale = 0f;
+ 
         }
     }
 

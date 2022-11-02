@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SetStart();
+        SoundManager.INSTANCE.Play("8bitmusic", SoundManager.AudioType.BGM);
     }
 
     private void Update()

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Skill : MonoBehaviour
 {
     [SerializeField] protected float baseDamage;
     [SerializeField] private float damage;
     [SerializeField] private int skillLevel;
     [SerializeField] private Vector3 scale;
+    [SerializeField] private Sprite skillImage;
 
     protected virtual void Start()
     {
@@ -17,7 +18,8 @@ public class Skill : MonoBehaviour
     public float Damage { get => damage; set => damage = value; }
     public int SkillLevel
     {
-        get => skillLevel; set
+        get => skillLevel; 
+        set
         {
             skillLevel = value;
 
@@ -25,6 +27,15 @@ public class Skill : MonoBehaviour
             else transform.localScale = scale;
 
             SetSkillLevel(skillLevel);
+        }
+    }
+
+    public Sprite SkillImage
+    {
+        get => skillImage;
+        set
+        {
+            skillImage = value;
         }
     }
 

@@ -6,11 +6,12 @@ public class HellZone : Skill
 {
     [SerializeField] private GameObject player;
 
-    private void Start()
+    protected override void Start()
     {
         SkillLevel = 1;
     }
-    private void Update()
+    
+    private void LateUpdate()
     {
         transform.position = player.transform.position;
     }
