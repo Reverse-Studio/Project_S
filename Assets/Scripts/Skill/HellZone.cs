@@ -6,7 +6,12 @@ public class HellZone : Skill
 {
     [SerializeField] private GameObject player;
 
-    private void Update()
+    protected override void Start()
+    {
+        SkillLevel = 1;
+    }
+    
+    private void LateUpdate()
     {
         transform.position = player.transform.position;
     }
@@ -14,5 +19,10 @@ public class HellZone : Skill
     protected override void OnHitting(Enemy enemy)
     {
         enemy.DoDamage(Damage);
+    }
+
+    protected override void SetSkillLevel(int level)
+    {
+        Damage = baseDamage + (level - 1) * 2;
     }
 }

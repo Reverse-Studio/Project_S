@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
+    public static float moveSpeed;
     private Joystick controller;
     public Transform player;
     public Transform camPivot;

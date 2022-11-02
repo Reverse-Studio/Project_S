@@ -9,9 +9,9 @@ public class CamController : MonoBehaviour
     {
         
     }
-    void FixedUpdate()
+    void LateUpdate()
     {
         Vector3 pos = this.transform.position;
-        this.transform.position = Vector3.Lerp(pos, targetTransform.position, 10 * Time.fixedDeltaTime);
+        this.transform.position = new Vector3(targetTransform.position.x, transform.position.y,targetTransform.position.z);
     }
 }
