@@ -19,9 +19,9 @@ public partial class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        health.SetMaxHealth(maxHealth);
         expSet.SetMaxExp(nextExp);
         expSet.SetExp(0);
+        health.SetMaxHealth(currentHealth);
     }
 
     // Update is called once per frame
@@ -30,6 +30,10 @@ public partial class Player : MonoBehaviour
         playerLevel.text = level.ToString();
         if (countTime < delayTime)
             countTime += Time.deltaTime;
+        if(currentHealth > 100){
+            currentHealth = 100;
+        }
+        health.SetHealth(currentHealth);
     }
 
     private void OnTriggerStay(Collider other)
@@ -41,7 +45,6 @@ public partial class Player : MonoBehaviour
                 GameManager.INSTANCE.ShowDamage(transform.position, 10, Color.red);
                 countTime -= delayTime;
                 currentHealth -= 10;
-                health.SetHealth(currentHealth);
             }
         }
     }

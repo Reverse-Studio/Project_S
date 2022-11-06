@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private static GameManager __instance__ = null;
     public static GameManager INSTANCE { get => __instance__; }
     private GameObject orb;
+    private GameObject healPack;
     public bool isPause = false;
     public GameObject death;
     [SerializeField] private GameObject pause;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         if (__instance__ != null) Destroy(__instance__.gameObject);
 
         orb = Resources.Load<GameObject>("Prefab/ExpOrb");
+        healPack = Resources.Load<GameObject>("Prefab/HealPack");
         pause.SetActive(false);
         death.SetActive(false);
         __instance__ = this;
@@ -45,8 +47,13 @@ public class GameManager : MonoBehaviour
     public void SpawnExpOrb(Vector3 location, int amount)
     {
         GameObject orbInst = Instantiate(orb, location, Quaternion.identity);
-        ExpOrb expOrb = orbInst.GetComponent<ExpOrb>();
+        Orb expOrb = orbInst.GetComponent<Orb>();
         expOrb.Amount = amount;
+    }
+
+    public void SpawnHealPack(Vector3 location)
+    {
+        GameObject healPackInst = Instantiate(healPack, location, Quaternion.identity);
     }
 
     public void SetPause()

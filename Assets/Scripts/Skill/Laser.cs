@@ -50,7 +50,7 @@ public class Laser : Skill
     {
         if (condition)
         {
-            transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            transform.rotation = player.transform.rotation;
             damageTrigger.enabled = true;
             laser.SetActive(true);
         }

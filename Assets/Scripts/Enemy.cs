@@ -59,7 +59,13 @@ public class Enemy : MonoBehaviour
     private void Death()
     {
         isDead = true;
-        GameManager.INSTANCE.SpawnExpOrb(transform.position + Vector3.up, Random.Range(3, 5));
+        int random = Random.Range(0,100);
+        if(random > 9){
+            GameManager.INSTANCE.SpawnExpOrb(transform.position + Vector3.up, Random.Range(3, 5));
+        }
+        else{
+            GameManager.INSTANCE.SpawnHealPack(transform.position + Vector3.up);
+        }
         Animator animator = GetComponent<Animator>();
         Collider collider = GetComponent<Collider>();
         Destroy(collider);
