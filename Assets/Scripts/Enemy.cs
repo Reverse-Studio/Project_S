@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.INSTANCE.isPause) return;
         if (isDead) return;
 
         if (Vector3.Distance(transform.position, target.position) > 1.0f)

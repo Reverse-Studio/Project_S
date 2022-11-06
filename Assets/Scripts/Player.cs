@@ -15,8 +15,7 @@ public partial class Player : MonoBehaviour
     private float countTime;
     public float delayTime = 0.5f;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
@@ -24,9 +23,10 @@ public partial class Player : MonoBehaviour
         expSet.SetExp(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (GameManager.INSTANCE.isPause) return;
+
         playerLevel.text = level.ToString();
         if (countTime < delayTime)
             countTime += Time.deltaTime;

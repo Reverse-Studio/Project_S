@@ -15,18 +15,25 @@ public class EnemySpawn : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine(CreateEnemy());
     }
 
-    private IEnumerator CreateEnemy()
+    public float SpawnDelay = 2;
+    private float spawnCoolDown = 0;
+
+    private void Update()
     {
-        while (true)
+        if (GameManager.INSTANCE.isPause) return;
+
+        spawnCoolDown += Time.deltaTime;
+
+        if (spawnCoolDown >= SpawnDelay)
         {
             float a = Random.Range(-Mathf.PI, Mathf.PI);
             float x = Mathf.Sin(a) * Radius + player.transform.position.x;
             float z = Mathf.Cos(a) * Radius + player.transform.position.z;
             Instantiate(enemy, new Vector3(x, 0, z), Quaternion.identity);
-            yield return new WaitForSeconds(0.2f);
+
+            spawnCoolDown -= SpawnDelay;
         }
     }
 }

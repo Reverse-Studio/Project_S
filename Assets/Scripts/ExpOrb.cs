@@ -4,7 +4,7 @@ public class ExpOrb : MonoBehaviour
     private GameObject Player;
     private ParticleSystem particle;
     
-    [SerializeField] private float MagnetDistance;
+    public static float MagnetDistance;
     private void Awake()
     {
         particle = GetComponent<ParticleSystem>();

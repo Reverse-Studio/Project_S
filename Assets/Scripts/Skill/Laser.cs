@@ -12,7 +12,7 @@ public class Laser : Skill
     private Collider damageTrigger;
     private GameObject player;
 
-    private void Start()
+    protected override void Start()
     {
         player = GameObject.Find("Player");
         damageTrigger = GetComponent<Collider>();
@@ -21,6 +21,8 @@ public class Laser : Skill
 
     private void Update()
     {
+        if(SkillLevel == 0) return;
+
         transform.position = player.transform.position + Vector3.up * 2;
         timer += Time.deltaTime;
 

@@ -7,13 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public Player player;
     private static GameManager __instance__ = null;
-    public static GameManager INSTANCE { get => __instance__; }
+    public static GameManager INSTANCE => __instance__;
     private GameObject orb;
-    bool isPause = false;
+    public bool isPause = false;
     public GameObject death;
+
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject damage;
+
     private void Awake()
     {
         Debug.Log(__instance__);
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SetStart();
+        SoundManager.INSTANCE.Play("8bitmusic", SoundManager.AudioType.BGM);
     }
 
     private void Update()
@@ -36,7 +39,7 @@ public class GameManager : MonoBehaviour
         {
             death.SetActive(true);
             pauseButton.SetActive(false);
-            Time.timeScale = 0f;
+            // Time.timeScale = 0f;
             isPause = true;
         }
     }
@@ -53,7 +56,7 @@ public class GameManager : MonoBehaviour
         if (isPause == false)
         {
             pauseButton.SetActive(false);
-            Time.timeScale = 0f;
+            // Time.timeScale = 0f;
             isPause = true;
         }
     }
@@ -63,7 +66,7 @@ public class GameManager : MonoBehaviour
         if (isPause == true)
         {
             pauseButton.SetActive(true);
-            Time.timeScale = 1f;
+            // Time.timeScale = 1f;
             isPause = false;
         }
     }
@@ -80,7 +83,7 @@ public class GameManager : MonoBehaviour
             death.SetActive(true);
             pauseButton.SetActive(false);
             isPause = true;
-            Time.timeScale = 0f;
+            // Time.timeScale = 0f;
         }
     }
 
