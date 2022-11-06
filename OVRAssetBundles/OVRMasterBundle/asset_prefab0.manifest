@@ -1,0 +1,118 @@
+ManifestFileVersion: 0
+CRC: 557980147
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1e70eacd847a91ab7c0066e8cb77def2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4f3c4c7f055e8d9703c67f2477b6a4b8
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cb7623a8f0b49cf4dbaa40aea4d4be64, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 54c16b381e28e8d479237771d234dbae, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 73eac66b128fc8749a21623225c34541, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9a00128818eda43dfaa959b83527b255, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5cc5c234723e3a54d8dd09b131117743, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f07515ada089df47868559a20dd6783, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5178bc8574ce2bf4388e787a2e2af326, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 143
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.RectOffset
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.AnimationTriggers
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Button/ButtonClickedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ColorBlock
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Navigation
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.SpriteState
+Assets:
+- Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Label/Label_LeftLabel01_Orange.prefab
+- Assets/Joystick Pack/Prefabs/Dynamic Joystick.prefab
+- Assets/Oculus/VR/Prefabs/OVRHandPrefab.prefab
+- "Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn \u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193\u2193.prefab"
+- Assets/SimpleApocalypse/_Prefabs/Environment/SA_Env_ForestTile_03.prefab
+- Assets/SimpleApocalypse/_Prefabs/Environment/SA_Env_ForestTile_01.prefab
+- Assets/SimpleApocalypse/_Prefabs/Environment/SA_Env_ForestTile_02.prefab
+- Assets/Oculus/VR/Prefabs/OVRPlayerController.prefab
+- Assets/SimpleApocalypse/_Prefabs/Environment/SA_Env_GrassSection_01.prefab
+- Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_DemoScene_Panels/Play_Pause.prefab
+- Assets/Oculus/VR/Prefabs/OVRCameraRig.prefab
+- Assets/SimpleApocalypse/_Prefabs/Environment/SkyDome.prefab
+- Assets/SimpleApocalypse/_Prefabs/Environment/SA_Env_GrassSection_Raised_01.prefab
+Dependencies:
+- C:/Users/chang/UnityProjects/Project_S/OVRAssetBundles/OVRMasterBundle/asset_asset0
+- C:/Users/chang/UnityProjects/Project_S/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- C:/Users/chang/UnityProjects/Project_S/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/Users/chang/UnityProjects/Project_S/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/chang/UnityProjects/Project_S/OVRAssetBundles/OVRMasterBundle/asset_png1

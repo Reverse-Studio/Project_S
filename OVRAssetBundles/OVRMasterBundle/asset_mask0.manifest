@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1608470140
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6806e88ea4ac3bbdc7fbd3766e9c5cd3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 618316c8167c7e3ed46bc262a34af1a0
+HashAppended: 0
+ClassTypes:
+- Class: 319
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Mask_Head.mask
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Mask_Upper.mask
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Mask_LowerBody.mask
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Mask_Body.mask
+Dependencies: []

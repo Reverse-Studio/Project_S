@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2927468650
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3b5000da2445412574fef6a97e7535f1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 070e64028d0fb02d3485eb0d43485f8b
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+- Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+- Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
+Dependencies: []

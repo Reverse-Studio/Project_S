@@ -1,0 +1,54 @@
+ManifestFileVersion: 0
+CRC: 3662842892
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2b03433ef6a9aa6406e4ab01bf306ec1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline
+  64 SDF Atlas.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline
+  54 SDF Atlas.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Demo/Demo_Icon/Icon_PictoIcon_Pause.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Demo/Demo_Background/Background_ScreenDimed_Black.png
+- Assets/Oculus/VR/Textures/HandTracking/HandTracking_uvmap_2048.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Demo/Demo_Icon/Icon_PictoIcon_Setting.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Slider/Slider01_Frame.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Label/Label_LeftLabel01_Orange.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Slider/Slider01_FrameLine.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Demo/Demo_Icon/Icon_PictoIcon_Play.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Button/Btn_OtherButton_Circle02.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Particle/Texture/fx_star_yellow.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Demo/Demo_Icon/Icon_PictoIcon_Resume.png
+- Assets/SimpleApocalypse/_Textures/SimpleApocalypse_Texture.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Button/Btn_OtherButton_Hexagon01_Blue.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Slider/Slider01_Icon1.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended
+  ASCII_120 SDF Atlas.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline
+  40 SDF Atlas.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Slider/Slider01_Fill.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Demo/Demo_Background/Background_06.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Slider/Slider01_Fill_Mask.png
+- Assets/Joystick Pack/Sprites/Handles/Handle_Plain.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline
+  120 SDF Atlas.png
+- Assets/SimpleApocalypse/_Textures/Characters/SA_Character_OldMaleSurvivor.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Popup/Popup_MiddeFrame02.png
+- Assets/SimpleApocalypse/_Textures/SimpleSky.png
+- Assets/SimpleApocalypse/_Textures/Zombies/SA_Zombie_AirportSecurity.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Slider/Slider01_icon2.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Slider/Slider10_Frame.png
+- Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline
+  50 SDF Atlas.png
+Dependencies: []

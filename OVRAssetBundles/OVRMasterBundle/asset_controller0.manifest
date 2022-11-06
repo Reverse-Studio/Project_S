@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 2662625888
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a1e4b6242b8edcdb60c90b5d82e9cd6a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fdf6c57a251b9f6ec27bdd2fe01b033c
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Zombies_5.0.controller
+- Assets/SimpleApocalypse/_Models/Characters/Animator/SimpleCharacter_5.0.controller
+Dependencies:
+- C:/Users/chang/UnityProjects/Project_S/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- C:/Users/chang/UnityProjects/Project_S/OVRAssetBundles/OVRMasterBundle/asset_mask0

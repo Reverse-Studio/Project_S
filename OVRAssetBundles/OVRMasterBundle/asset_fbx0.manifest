@@ -1,0 +1,48 @@
+ManifestFileVersion: 0
+CRC: 3368904618
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c0277a65027b88694f8a4354e5909fd2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f991f80580d5c93b0763ecc3a2dc9cfa
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Animations.fbx
+- Assets/SimpleApocalypse/_Models/Environment/SA_Env_ForestTile_02.fbx
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Animations_Melee.fbx
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Animations_Static.fbx
+- Assets/SimpleApocalypse/_Models/Environment/SA_Env_GrassSection_01.fbx
+- Assets/SimpleApocalypse/_Models/Environment/SA_Env_ForestTile_03.fbx
+- Assets/SimpleApocalypse/_Models/Environment/SA_Env_GrassSection_Raised_01.fbx
+- Assets/SimpleApocalypse/_Models/Characters/SA_Character.fbx
+- Assets/SimpleApocalypse/_Models/Environment/SA_Env_ForestTile_01.fbx
+- Assets/SimpleApocalypse/_Models/Environment/SkyDome.fbx
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Animations_IK.fbx
+- Assets/SimpleApocalypse/_Models/Characters/Animator/Zombies.fbx
+Dependencies: []

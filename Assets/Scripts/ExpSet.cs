@@ -9,7 +9,7 @@ public class ExpSet : MonoBehaviour
     private float exp;
     private float currentVelocity;
 
-    void Start()
+    private void Awake()
     {
         slider = GetComponent<Slider>();
     }
