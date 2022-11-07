@@ -24,6 +24,6 @@ public class HellZone : Skill
     protected override void SetSkillLevel(int level)
     {
         Damage = baseDamage + (level - 1) * 2;
-        
+        transform.localScale = new Vector3(level + 4, level + 4, level + 4);
     }
 }

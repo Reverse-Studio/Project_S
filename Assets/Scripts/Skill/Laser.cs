@@ -69,5 +69,6 @@ public class Laser : Skill
     protected override void SetSkillLevel(int level)
     {
         transform.localScale = new Vector3(level, level, 50);
+        Damage = level * 15f; 
     }
 }
