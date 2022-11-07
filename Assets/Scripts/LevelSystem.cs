@@ -9,8 +9,7 @@ public partial class Player : MonoBehaviour
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject levelUp;
     [SerializeField] private SkillManager skillManager;
-
-
+    
     public void AddExperience(int amount)
     {
         experience += amount;
@@ -19,6 +18,7 @@ public partial class Player : MonoBehaviour
         {
             //SoundManager.INSTANCE.Play()
             Time.timeScale = 0f;
+            GameManager.INSTANCE.isPause = true;
             experience -= nextExp;
             level++;
             nextExp = 30;// + level * (level + 1);
@@ -26,8 +26,8 @@ public partial class Player : MonoBehaviour
             pauseButton.SetActive(false);
             skillManager.ChangeSKills(); // skill 랜덤 선택창
             levelUp.SetActive(true);
- 
         }
+        else GameManager.INSTANCE.isPause = false;
     }
 
     public int Level { get => level; }

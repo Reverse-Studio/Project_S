@@ -10,7 +10,7 @@ public class ElectricBall : Skill
     [SerializeField] private float speed;
 
     private float angle = 0;
-
+    private int baseSpeed = 2;
     private void Update()
     {
         Rotate();
@@ -38,5 +38,7 @@ public class ElectricBall : Skill
     protected override void SetSkillLevel(int level)
     {
         Damage = baseDamage + (level - 1) * 10;
+        speed = baseSpeed + (level - 1) * 2.5f;
     }
+
 }

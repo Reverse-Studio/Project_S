@@ -6,6 +6,6 @@ public class Magnet : Skill
 {
     protected override void SetSkillLevel(int level)
     {
-        ExpOrb.MagnetDistance = (level + 1);
+        Orb.MagnetDistance = (level + 1);
     }
 }
