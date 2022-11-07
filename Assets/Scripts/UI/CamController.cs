@@ -9,6 +9,7 @@ public class CamController : MonoBehaviour
     {
         
     }
+
     void LateUpdate()
     {
         Vector3 pos = this.transform.position;

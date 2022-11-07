@@ -7,9 +7,12 @@ public class Restart : MonoBehaviour
 {
     public PlayerHealth health;
 
-    public void OnClickRestart(){
+    public void OnClickRestart()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1f;
+        // Time.timeScale = 1f;
+        
+        GameManager.INSTANCE.isPause = false;
         health.SetHealth(100);
     }
 }

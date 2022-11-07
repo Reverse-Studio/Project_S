@@ -9,8 +9,7 @@ public partial class Player : MonoBehaviour
     public ExpSet expSet;
     public TextMeshProUGUI playerLevel;
     public PlayerHealth health;
-    public GameManager gameManager;
-    int maxHealth = 100;
+    public int maxHealth = 100;
     public int currentHealth;
     private float countTime;
     public float delayTime = 0.5f;
@@ -18,9 +17,9 @@ public partial class Player : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        health.SetMaxHealth(maxHealth);
         expSet.SetMaxExp(nextExp);
         expSet.SetExp(0);
+        health.SetMaxHealth(currentHealth);
     }
 
     private void Update()
@@ -28,8 +27,16 @@ public partial class Player : MonoBehaviour
         if (GameManager.INSTANCE.isPause) return;
 
         playerLevel.text = level.ToString();
+
         if (countTime < delayTime)
             countTime += Time.deltaTime;
+
+        if (currentHealth > 100)
+        {
+            currentHealth = 100;
+        }
+
+        health.SetHealth(currentHealth);
     }
 
     private void OnTriggerStay(Collider other)
@@ -41,7 +48,6 @@ public partial class Player : MonoBehaviour
                 GameManager.INSTANCE.ShowDamage(transform.position, 10, Color.red);
                 countTime -= delayTime;
                 currentHealth -= 10;
-                health.SetHealth(currentHealth);
             }
         }
     }

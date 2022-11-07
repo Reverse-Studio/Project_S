@@ -24,5 +24,6 @@ public class HellZone : Skill
     protected override void SetSkillLevel(int level)
     {
         Damage = baseDamage + (level - 1) * 2;
+        
     }
 }

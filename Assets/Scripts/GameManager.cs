@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private static GameManager __instance__ = null;
     public static GameManager INSTANCE => __instance__;
     private GameObject orb;
+    private GameObject healPack;
     public bool isPause = false;
     public GameObject death;
 
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
         if (__instance__ != null) Destroy(__instance__.gameObject);
 
         orb = Resources.Load<GameObject>("Prefab/ExpOrb");
+        healPack = Resources.Load<GameObject>("Prefab/HealPack");
         pause.SetActive(false);
         death.SetActive(false);
         __instance__ = this;
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
     {
         if (player.currentHealth == 0 && isPause == false)
         {
+            Debug.Log(player.currentHealth);
+            Debug.Log("Death");
             death.SetActive(true);
             pauseButton.SetActive(false);
             // Time.timeScale = 0f;
@@ -47,8 +51,13 @@ public class GameManager : MonoBehaviour
     public void SpawnExpOrb(Vector3 location, int amount)
     {
         GameObject orbInst = Instantiate(orb, location, Quaternion.identity);
-        ExpOrb expOrb = orbInst.GetComponent<ExpOrb>();
+        Orb expOrb = orbInst.GetComponent<Orb>();
         expOrb.Amount = amount;
+    }
+
+    public void SpawnHealPack(Vector3 location)
+    {
+        GameObject healPackInst = Instantiate(healPack, location, Quaternion.identity);
     }
 
     public void SetPause()
@@ -74,17 +83,6 @@ public class GameManager : MonoBehaviour
     public void SetPlayerHealth()
     {
         player.currentHealth = 100;
-    }
-
-    public void LevelUp()
-    {
-        if (isPause == false)
-        {
-            death.SetActive(true);
-            pauseButton.SetActive(false);
-            isPause = true;
-            // Time.timeScale = 0f;
-        }
     }
 
     public void ShowDamage(Vector3 position, float damage, Color color)

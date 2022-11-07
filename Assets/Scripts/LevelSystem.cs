@@ -24,7 +24,10 @@ public partial class Player : MonoBehaviour
     private void LevelUp()
     {
         //SoundManager.INSTANCE.Play()
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
+
+        GameManager.INSTANCE.isPause = true;
+
         experience -= nextExp;
         level++;
         nextExp = 30;// + level * (level + 1);
@@ -40,8 +43,9 @@ public partial class Player : MonoBehaviour
     {
         pauseButton.SetActive(true);
         levelUp.SetActive(false);
-        Time.timeScale = 1f;
+        // Time.timeScale = 1f;
+        GameManager.INSTANCE.isPause = false;
     }
 
-    public float experienceNormalized { get => (float)experience / nextExp; }
+    public float experienceNormalized => (float)experience / nextExp;
 }
