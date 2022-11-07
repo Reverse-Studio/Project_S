@@ -1786,7 +1786,7 @@ MonoBehaviour:
   damage: 0
   skillLevel: 0
   scale: {x: 0, y: 0, z: 0}
-  skillImage: {fileID: 21300000, guid: bf7cc4f1c29f1a8478956bf9676a41ed, type: 3}
+  skillImage: {fileID: 21300000, guid: 6e82588e7cc44d943a745da6939278b8, type: 3}
 --- !u!4 &1222106485
 Transform:
   m_ObjectHideFlags: 0
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   damage: 0
   skillLevel: 0
   scale: {x: 0, y: 0, z: 0}
-  skillImage: {fileID: 21300000, guid: ac0cc29e55cea594f8d1bf955bf52f4d, type: 3}
+  skillImage: {fileID: 21300000, guid: 589827467cf46fb4688b86dc5b7b4dc1, type: 3}
 --- !u!4 &1332096297
 Transform:
   m_ObjectHideFlags: 0
@@ -9085,7 +9085,7 @@ MonoBehaviour:
   damage: 10
   skillLevel: 0
   scale: {x: 0, y: 0, z: 0}
-  skillImage: {fileID: 21300000, guid: bf7cc4f1c29f1a8478956bf9676a41ed, type: 3}
+  skillImage: {fileID: 21300000, guid: d02ef31feb6611243832308409d25220, type: 3}
   LaserDuringTime: 2
   LaserCoolTime: 5
 --- !u!54 &2001501194
@@ -9470,7 +9470,7 @@ MonoBehaviour:
   damage: 100
   skillLevel: 0
   scale: {x: 2, y: 2, z: 2}
-  skillImage: {fileID: 21300000, guid: 3feb5a7b13962eb488fb3d285c2e8952, type: 3}
+  skillImage: {fileID: 21300000, guid: d704f2c8e02ff244399ef4576e7b9125, type: 3}
   player: {fileID: 1884020937}
   radius: 5
   speed: 10
