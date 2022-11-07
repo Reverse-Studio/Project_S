@@ -24,7 +24,7 @@ public partial class Player : MonoBehaviour
             nextExp = 30;// + level * (level + 1);
             expSet.SetMaxExp(nextExp);
             pauseButton.SetActive(false);
-            skillManager.ChangeSKills();
+            skillManager.ChangeSKills(); // skill 랜덤 선택창
             levelUp.SetActive(true);
  
         }
