@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
         if (isDead) return;
 
         if (invulnerable > 0) return;
-        invulnerable = 0.1f;
+        invulnerable = 0.3f;
 
         health -= DamageAmount;
         GameManager.INSTANCE.ShowDamage(transform.position, DamageAmount, Color.white);

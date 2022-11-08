@@ -5,6 +5,7 @@ using TMPro;
 
 public class DamageEffect : MonoBehaviour
 {
+    public Transform player;
     public float damage;
     public Color color;
 
@@ -27,7 +28,8 @@ public class DamageEffect : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+        transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+        transform.LookAt(player, Vector3.up);
         alpha.a = Mathf.Lerp(alpha.a, 0, alphaSpeed * Time.deltaTime);
         text.color = alpha;
     }

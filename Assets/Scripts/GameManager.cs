@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
         GameObject inst = Instantiate(this.damage);
         DamageEffect effect = inst.GetComponent<DamageEffect>();
 
+        effect.player = player.transform;
         effect.damage = damage;
         effect.color = color;
 

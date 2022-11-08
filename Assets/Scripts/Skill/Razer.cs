@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class Laser : Skill
+public class Razer : Skill
 {
-    [SerializeField] private float LaserDuringTime = 2;
+    [SerializeField] private float RazerDuringTime = 2;
     [SerializeField] private float LaserCoolTime = 5;
 
     private float timer = 0;
     private bool isCoolTime = false;
 
-    private GameObject laser;
+    private GameObject razer;
     private Collider damageTrigger;
     private GameObject player;
 
@@ -16,7 +16,7 @@ public class Laser : Skill
     {
         player = GameObject.Find("Player");
         damageTrigger = GetComponent<Collider>();
-        laser = transform.Find("laser").gameObject;
+        razer = transform.Find("razer").gameObject;
     }
 
     private void Update()
@@ -37,9 +37,9 @@ public class Laser : Skill
         }
         else
         {
-            if (timer >= LaserDuringTime)
+            if (timer >= RazerDuringTime)
             {
-                timer -= LaserDuringTime;
+                timer -= RazerDuringTime;
                 isCoolTime = true;
                 SetLaserActive(false);
             }
@@ -52,12 +52,12 @@ public class Laser : Skill
         {
             transform.rotation = player.transform.rotation;
             damageTrigger.enabled = true;
-            laser.SetActive(true);
+            razer.SetActive(true);
         }
         else
         {
             damageTrigger.enabled = false;
-            laser.SetActive(false);
+            razer.SetActive(false);
         }
     }
 
@@ -69,5 +69,6 @@ public class Laser : Skill
     protected override void SetSkillLevel(int level)
     {
         transform.localScale = new Vector3(level, level, 50);
+        Damage = level * 15f; 
     }
 }
